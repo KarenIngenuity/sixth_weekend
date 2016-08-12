@@ -57,22 +57,6 @@ end
 
 
 
-RSpec.describe Entry do
-  describe '#word' do
-    it 'should return happy if given happy' do
-      entry = Entry.new("happy", ["joyful"], ["sad"])
-      expect(entry.word).to eq("happy")
-    end              
-  end
-  describe '#synonyms' do
-    it 'should return joyful if call synonyms method' do
-      entry = Entry.new("happy", ["joyful"], ["sad"])
-      expect(entry.synonyms).to eq(["joyful"])
-    end              
-  end  
-end
-
-
 # A Thesaurus will contain many Entries. An Entry contains three primary attributes:
 # word, synonymns, and antonyms. Your application should contain the following features:
 # 1. The ability to add new words to a Thesaurus.
