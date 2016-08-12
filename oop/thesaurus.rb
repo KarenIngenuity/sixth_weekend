@@ -17,13 +17,14 @@ require 'rspec'
 class Entry
   attr_accessor :word, :synonyms, :antonyms
 
-  def initialize(word, synonyms, antonyms)
+  def initialize(word_and_attributes)
+    # word_and_attributes is a hash
     # word = one word
     # synonym = array
     # antonym = array
-    @word = word
-    @synonyms = synonyms
-    @antonyms = antonyms
+    @word = word_and_attributes[:word]
+    @synonyms = word_and_attributes[:synonyms]
+    @antonyms = word_and_attributes[:antonyms]
   end
 
   def add_synonym(synonym)
@@ -47,7 +48,8 @@ end
 class Thesaurus
   attr_accessor :entries
   def initialize(entries)
-    @entries = []
+    #entries is an array.
+    @entries = entries
   end
 
   def add_entry(word)
