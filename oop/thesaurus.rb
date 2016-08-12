@@ -58,7 +58,6 @@ class Thesaurus
 end
 
 
-
 # A Thesaurus will contain many Entries. An Entry contains three primary attributes:
 # word, synonymns, and antonyms. Your application should contain the following features:
 # 1. The ability to add new words to a Thesaurus.

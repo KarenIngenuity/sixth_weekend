@@ -69,6 +69,7 @@ RSpec.describe Thesaurus do
       thesaurus = Thesaurus.new(["happy", "fun", "dark"])
       thesaurus.add_entry("big")
       expect(thesaurus.entries).to eq(["happy", "fun", "dark", "big"])
+      expect(entry.synonyms).to eq(["ominous"])
     end              
-  end           
+  end            
 end
