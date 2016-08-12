@@ -12,16 +12,7 @@
   #add a synonym
   #add an antonym
 
-class Thesaurus
-  attr_accessor :entries
-  def initialize(entries)
-    @entries = []
-  end
-
-  def add_entry(word)
-    @entries << word
-  end
-end
+require 'rspec'
 
 class Entry
   attr_accessor :word, :synonyms, :antonyms
@@ -50,6 +41,35 @@ class Entry
   def delete_antonym(antonym)
     @antonyms.delete(antonym)
   end    
+end
+
+
+class Thesaurus
+  attr_accessor :entries
+  def initialize(entries)
+    @entries = []
+  end
+
+  def add_entry(word)
+    @entries << word
+  end
+end
+
+
+
+Spec.describe Entry do
+  describe '#word' do
+    it 'should return happy if given happy' do
+      entry = Entry.new("happy", "joyful", "sad")
+      expect(entry.word).to eq("happy")
+    end              
+  end
+  describe '#synonyms' do
+    it 'should return joyful if call synonym method' do
+      entry = Entry.new("happy", "joyful", "sad")
+      expect(entry.synonym).to eq("joyful")
+    end              
+  end  
 end
 
 
