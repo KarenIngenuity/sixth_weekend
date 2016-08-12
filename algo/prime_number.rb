@@ -77,13 +77,7 @@ require 'rspec'
 class PrimeTest
   def highest_prime_number_under(number)
     prime_numbers = [1, 2, 3]
-    previous_numbers = []
     for i in 2..(number)
-      previous_numbers << i
-    end
-    p "previous_numbers: #{previous_numbers}"
-    p "prime_numbers: #{prime_numbers}"
-    previous_numbers.each do |i|
       if i % 2 != 0 and i % 3 != 0
           prime_numbers << i
       end
