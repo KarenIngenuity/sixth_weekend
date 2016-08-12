@@ -57,17 +57,17 @@ end
 
 
 
-Spec.describe Entry do
+RSpec.describe Entry do
   describe '#word' do
     it 'should return happy if given happy' do
-      entry = Entry.new("happy", "joyful", "sad")
+      entry = Entry.new("happy", ["joyful"], ["sad"])
       expect(entry.word).to eq("happy")
     end              
   end
   describe '#synonyms' do
-    it 'should return joyful if call synonym method' do
-      entry = Entry.new("happy", "joyful", "sad")
-      expect(entry.synonym).to eq("joyful")
+    it 'should return joyful if call synonyms method' do
+      entry = Entry.new("happy", ["joyful"], ["sad"])
+      expect(entry.synonyms).to eq(["joyful"])
     end              
   end  
 end
