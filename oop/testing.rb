@@ -42,7 +42,7 @@ RSpec.describe Entry do
     end          
   end  
   describe '#delete_antonym' do
-    it 'should gloomy if call antonyms method, after adding gloomy as an antonym and deleting sad' do
+    it 'should return gloomy if call antonyms method, after adding gloomy as an antonym and deleting sad' do
       entry = Entry.new({word: "happy", synonyms: ["joyful"], antonyms:["sad"]})
       entry.add_antonym("gloomy")
       entry.delete_antonym("sad")
@@ -53,7 +53,7 @@ end
 
 RSpec.describe Thesaurus do
   describe '#entries' do
-    it 'should return happy, fun, and dark if entries are called' do
+    it 'should return happy, fun, and dark, if entries are called' do
       entry = Entry.new({word: "happy", synonyms: ["joyful"], antonyms:["sad"]})
       entry = Entry.new({word: "fun", synonyms: ["exciting"], antonyms:["boring"]})
       entry = Entry.new({word: "dark", synonyms: ["ominous"], antonyms:["light"]})            
@@ -62,7 +62,7 @@ RSpec.describe Thesaurus do
     end              
   end
   describe '#add_entry' do
-    it 'should return happy, fun, dark, and big if entries are called, after adding big to the entries' do
+    it 'should return happy, fun, dark, and big, if entries are called, after adding big to the entries' do
       entry = Entry.new({word: "happy", synonyms: ["joyful"], antonyms:["sad"]})
       entry = Entry.new({word: "fun", synonyms: ["exciting"], antonyms:["boring"]})
       entry = Entry.new({word: "dark", synonyms: ["ominous"], antonyms:["light"]})            
