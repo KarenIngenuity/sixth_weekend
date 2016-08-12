@@ -1,4 +1,58 @@
 # Create a thesaurus application. To create it, you will create two classes, Thesaurus and Entry.
+
+#Thesaurus:
+  #contains many entries
+#Entries:  
+  #attributes: word, synonyms, antonyms
+  #features: 
+  #add new words
+  #delete words
+  #look for a word's synonyms
+  #look for a word's antonyms
+  #add a synonym
+  #add an antonym
+
+class Thesaurus
+  attr_accessor :entries
+  def initialize(entries)
+    @entries = []
+  end
+
+  def add_entry(word)
+    @entries << word
+  end
+end
+
+class Entry
+  attr_accessor :word, :synonyms, :antonyms
+
+  def initialize(word, synonyms, antonyms)
+    # word = one word
+    # synonym = array
+    # antonym = array
+    @word = word
+    @synonyms = synonyms
+    @antonyms = antonyms
+  end
+
+  def add_synonym(synonym)
+    @synonyms << synonym
+  end
+  
+  def add_antonym(antonym)
+    @antonyms << antonym
+  end
+
+  def delete_synonym(synonym)
+    @synonyms.delete(synonym)
+  end 
+
+  def delete_antonym(antonym)
+    @antonyms.delete(antonym)
+  end    
+end
+
+
 # A Thesaurus will contain many Entries. An Entry contains three primary attributes:
 # word, synonymns, and antonyms. Your application should contain the following features:
 # 1. The ability to add new words to a Thesaurus.
